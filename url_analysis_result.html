@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Analysis Results</title>
+</head>
+<body>
+    <h1>Analysis Results for {{ url }}</h1>
+
+    {% if results.message %}
+        <p>{{ results.message }}</p>
+    {% else %}
+        <p>Classified Category: {{ results.category }}</p>
+        <p>Demographic Parity Difference (Race): {{ results.dp_difference_race }}</p>
+        <p>Demographic Parity Difference (Sex): {{ results.dp_difference_sex }}</p>
+        <p>Disparate Impact (Race): {{ results.disparate_impact }}</p>
+        <p>Statistical Parity Difference (Race): {{ results.statistical_parity }}</p>
+    {% endif %}
+    
+    <a href="{{ url_for('url_checker') }}">Analyze Another URL</a>
+</body>
+</html>

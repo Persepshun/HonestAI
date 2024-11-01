@@ -2,90 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Checker - Ethical AI Toolkit</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #3333ff;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        /* Navigation Bar Styles */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #3333ff;
-            padding: 1rem 0;
-        }
-        .navbar a {
-            color: white;
-            padding: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        .navbar a:hover {
-            color: #00e6e6;
-        }
-        .content {
-            padding: 2rem;
-            text-align: center;
-        }
-        .form-group {
-            margin: 1rem 0;
-        }
-        .submit-btn {
-            background-color: #3333ff;
-            color: white;
-            padding: 0.5rem 1rem;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .submit-btn:hover {
-            background-color: #00e6e6;
-        }
-    </style>
+    <title>URL Checker</title>
 </head>
 <body>
-
-<header>
     <h1>URL Checker</h1>
-    <p>Analyze a website for bias and ethical standards</p>
-</header>
-
-<!-- Navigation Bar -->
-<div class="navbar">
-    <a href="index.html">Home</a> |
-    <a href="url_checker.html">Check URL</a> |
-    <a href="#">News Stream</a> |
-    <a href="#">Search</a> |
-    <a href="#">Sign In</a>
-</div>
-
-<!-- Main Content -->
-<section class="content">
-    <h2>Enter a URL to Analyze</h2>
-    <p>This tool will analyze the provided URL for bias and ethical compliance based on our toolkit's standards.</p>
-    
-    <!-- URL Checker Form -->
-    <form action="url_analysis_result.html" method="post">
-        <div class="form-group">
-            <label for="url">URL:</label>
-            <input type="text" id="url" name="url" required placeholder="Enter a URL" style="width: 80%; padding: 0.5rem;">
-        </div>
-        <button type="submit" class="submit-btn">Check URL</button>
+    <form action="{{ url_for('url_checker') }}" method="post">
+        <label for="url">Enter a URL:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Analyze</button>
     </form>
-</section>
-
 </body>
 </html>

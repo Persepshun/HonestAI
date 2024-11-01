@@ -2,67 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethical AI Toolkit - Landing Page</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #3333ff;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        /* Navigation Bar Styles */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #3333ff;
-            padding: 1rem 0;
-        }
-        .navbar a {
-            color: white;
-            padding: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        .navbar a:hover {
-            color: #00e6e6;
-        }
-        .content {
-            padding: 2rem;
-            text-align: center;
-        }
-    </style>
+    <title>Home</title>
 </head>
 <body>
-
-<header>
-    <h1>Ethical AI Toolkit</h1>
-    <p>Bias Detection and Ethical Screening for Online Content</p>
-</header>
-
-<!-- Navigation Bar -->
-<div class="navbar">
-    <a href="index.html">Home</a> |
-    <a href="url_checker.html">Check URL</a> |
-    <a href="#">News Stream</a> |
-    <a href="#">Search</a> |
-    <a href="#">Sign In</a>
-</div>
-
-<!-- Main Content -->
-<section class="content">
-    <h2>Welcome to the Ethical AI Toolkit</h2>
-    <p>This toolkit is designed to detect biases and ensure ethical standards in online content. Use the URL checker to analyze websites for transparency, privacy, and fairness.</p>
-    <a href="url_checker.html" style="color: #3333ff; text-decoration: underline;">Go to URL Checker</a>
-</section>
-
+    <h1>Welcome to the News Analysis Portal</h1>
+    <ul>
+        <li><a href="{{ url_for('url_checker') }}">Check URL</a></li>
+        <li><a href="{{ url_for('search') }}">Search GDELT or Common Crawl</a></li>
+    </ul>
 </body>
 </html>

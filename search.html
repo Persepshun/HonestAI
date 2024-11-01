@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search News Data</title>
+</head>
+<body>
+    <h1>Search News Data</h1>
+    <form action="/search" method="post">
+        <label for="query">Query:</label>
+        <input type="text" id="query" name="query" required>
+        <label for="source">Source:</label>
+        <select id="source" name="source">
+            <option value="gdelt">GDELT</option>
+            <option value="common_crawl">Common Crawl</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if results.message %}
+        <p>{{ results.message }}</p>
+    {% else %}
+        <h2>Analysis Results</h2>
+        <p>Demographic Parity Difference (Race): {{ results.dp_difference_race }}</p>
+        <p>Demographic Parity Difference (Sex): {{ results.dp_difference_sex }}</p>
+        <p>Disparate Impact (Race): {{ results.disparate_impact }}</p>
+        <p>Statistical Parity Difference (Race): {{ results.statistical_parity }}</p>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
