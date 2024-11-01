@@ -1,7 +1,41 @@
+# Flask: Web framework for creating server-side applications in Python
+flask
 
+# Requests: For sending HTTP requests to fetch data from URLs (e.g., for URL checker)
+requests
+
+# BeautifulSoup4: A library for parsing HTML and XML documents, used here to extract text from HTML
+beautifulsoup4
+
+# Pandas: Data analysis and manipulation library, often used for data cleaning and organizing data structures
 pandas
+
+# Numpy: Fundamental library for numerical operations, providing support for arrays and mathematical functions
 numpy
+
+# Scikit-Learn: Machine learning library for training models, such as Logistic Regression, and includes tools for model evaluation
 scikit-learn
-aif360
-fairlearn
+
+# Matplotlib: Data visualization library for creating plots and graphs, used here for visualizing results if needed
 matplotlib
+
+# Lime: Local interpretable model-agnostic explanations, used to interpret model predictions for fairness analysis
+lime
+
+# SHAP: SHapley Additive exPlanations library for interpreting complex model predictions in an explainable AI setting
+shap
+
+# AIF360: Fairness library for AI models, specifically helps evaluate bias with methods like AdversarialDebiasing
+aif360[AdversarialDebiasing,inFairness]
+
+# Fairlearn: Library for evaluating and improving fairness in machine learning models, another layer for bias detection
+fairlearn
+
+# Newscatcher API: Fetches real-time news articles from different sources based on keywords (API key required)
+newscatcherapi
+
+# GDELT: Global Database of Events, Language, and Tone API; allows searching through event-based and media coverage data
+gdelt
+
+# Media Cloud: A research tool for analyzing media coverage from a wide array of sources (API key required)
+mediacloud

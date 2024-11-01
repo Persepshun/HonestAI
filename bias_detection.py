@@ -27,22 +27,32 @@ def load_dataset():
     return data
 
 # Function to preprocess the data and prepare it for training
+
 def preprocess_data(data):
     """
-    Preprocess dataset by encoding target and creating dummy variables.
+    Process the input DataFrame, which should contain web page content.
+    This version is adjusted for generic content without requiring an "income" column.
     
     Args:
-        data (DataFrame): Raw data with categorical features.
-        
+        data (DataFrame): DataFrame with a 'content' column containing text content from a URL.
+    
     Returns:
-        X (DataFrame): Feature data ready for model input.
-        y (Series): Target variable for training.
+        X (DataFrame): Feature data (processed content).
+        y (Series): Dummy target variable, set to zeros for compatibility.
     """
-    data['income'] = data['income'].apply(lambda x: 1 if x == ' >50K' else 0)
-    data = pd.get_dummies(data, drop_first=True)
-    X = data.drop('income', axis=1)
-    y = data['income']
+    # Ensure 'content' column exists in the data
+    if 'content' not in data.columns:
+        raise ValueError("Data does not contain a 'content' column.")
+    
+    # For simplicity, we'll treat each character count in the content as a feature (basic example)
+    # This is just to create dummy features for compatibility with the bias and ethical analysis
+    data['char_count'] = data['content'].apply(len)
+    data['word_count'] = data['content'].apply(lambda x: len(x.split()))
+    
+    X = data[['char_count', 'word_count']]
+    y = pd.Series([0] * len(X))  # Dummy target variable, set to zeroes
     return X, y
+
 
 # Train, predict, and calculate accuracy of a logistic regression model
 def train_and_evaluate_model(X_train, X_test, y_train, y_test):
@@ -117,3 +127,41 @@ def plot_metrics(metrics):
     plt.xticks(rotation=45, ha="right")
     plt.show()
 
+    import pandas as pd  # Data manipulation and analysis library
+from fairlearn.metrics import demographic_parity_difference, equalized_odds_difference  # Fairlearn metrics for bias detection
+from aif360.metrics import BinaryLabelDatasetMetric  # Fairness evaluation from AI Fairness 360
+from aif360.datasets import BinaryLabelDataset  # Data structuring for fairness checks
+
+def preprocess_data(data):
+    """
+    Prepares data for model training by calculating character and word count features,
+    which will serve as basic features for the model. It also assigns labels as a 'target' variable.
+    """
+    data['char_count'] = data['content'].apply(len)  # Number of characters in content
+    data['word_count'] = data['content'].apply(lambda x: len(x.split()))  # Number of words in content
+    X = data[['char_count', 'word_count']]  # Features for the model
+    y = data['target']  # Target labels for classification
+    return X, y
+
+def evaluate_fairness(y_true, y_pred, sensitive_feature):
+    """
+    Evaluates the model's predictions for fairness using demographic parity difference.
+    Sensitive features are specified to examine if fairness differs across demographics.
+    """
+    dp_diff = demographic_parity_difference(y_true, y_pred, sensitive_features=sensitive_feature)
+    eo_diff = equalized_odds_difference(y_true, y_pred, sensitive_features=sensitive_feature)
+    return dp_diff, eo_diff
+
+def evaluate_aif360_metrics(X, y):
+    """
+    Uses AI Fairness 360 metrics to calculate fairness measures.
+    Assumes the target variable has binary labels, making it suitable for BinaryLabelDataset.
+    """
+    # Convert data into a BinaryLabelDataset format for AI Fairness 360
+    dataset = BinaryLabelDataset(df=pd.DataFrame(X), label_names=['target'], protected_attribute_names=['char_count'])
+    metric = BinaryLabelDatasetMetric(dataset, unprivileged_groups=[{'char_count': 0}], privileged_groups=[{'char_count': 1}])
+    
+    # Fairness evaluation metrics
+    disparate_impact = metric.disparate_impact()
+    statistical_parity = metric.statistical_parity_difference()
+    return disparate_impact, statistical_parity
