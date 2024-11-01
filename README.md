@@ -21,7 +21,7 @@ helping identify any potential biases in model predictions.
 ## Usage
 Run the `bias_detection.py` file to execute the bias detection module:
 ```bash
-python bias_detection.py
+python run_toolkit.py
 ```
 
 ## Metrics Explained
