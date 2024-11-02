@@ -3,40 +3,179 @@
 <head>
     <!-- HonestAI was created for the Fall 2024 BMCC AI Innovation Challenge -->
     <!-- Icon created by Wahyudin Ratawan of the noun project -->
+    <!-- Background photo by NASA from Unsplash -->
     <meta charset="UTF-8">
     <title>Home</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Google Font & Custom CSS stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <!-- nav bar -->
-    <nav class="navbar">
+    <nav class="navbar text-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand montserrat-txt" href="#">
             <img src="imgs/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
             HonestAI
           </a>
         </div>
       </nav>
-    <!-- carousel/main content -->
-     <div>
-        <img src/>
-     </div>
+
+  <!-- Full-screen background image -->
+  <div class="full-screen-bg">    
+    <div class="w-75 py-2 mx-auto text-center">
+    <center>
+        <button class="btn btn-outline-secondary montserrat-txt"><a href="url_checker.html">Check URL</a></button>
+        <br>
+        <button class="btn btn-outline-secondary montserrat-txt"><a href="search.html">Search GDELT or Common Crawl</a></button>
+    </center>
+    </div>
+    </div>
 
     <!-- links -->
-    <div>
-        <ul>
-            <li><a href="url_checker.html">Check URL</a></li>
-            <li><a href="search.html">Search GDELT or Common Crawl</a></li>
-        </ul>
-    </div>
-    <!-- description -->
-    <div>
 
+    
+    <!-- About Sections -->
+    <div class="container py-5">
+        <!-- About the Project Section -->
+        <section id="about-project" class="mb-5">
+            <h2 class="text-center montserrat-txt">About the Project</h2>
+            <p class="text-center">
+                HonestAI is designed to bring transparency and credibility to users in an age of digital overload and confusion. Created for the Fall 2024 BMCC AI Innovation Challenge, this project utilizes AI/Machine Learning to help users analyze and verify web sources, promoting informed decisions in an era of digital information overload. Through machine learning and natural language processing, HonestAI provides users with tools to assess the credibility of content and to identify trustworthy information sources.
+            </p>
+        </section>
+
+    <!-- Next Steps Section -->
+    <section id="next-steps" class="mb-5">
+        <h2 class="text-center montserrat-txt">Next Steps</h2>
+        <p class="text-center">
+            HonestAI has the potential to grow and serve broader audiences by scaling its technology and expanding its feature set. Click below to view the next steps for the project:
+        </p>
+
+        <div class="accordion" id="nextStepsAccordion">
+            <!-- Item 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button montserrat-txt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <b>Advanced Machine Learning Models:</b>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#nextStepsAccordion">
+                    <div class="accordion-body">
+                        Develop more complex models to improve accuracy and refine the AI’s ability to detect misinformation patterns across various online platforms.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed montserrat-txt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <b>API for Third-Party Integration:</b>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#nextStepsAccordion">
+                    <div class="accordion-body">
+                        Create an API that allows other platforms, such as news aggregators and educational websites, to integrate HonestAI’s verification tools into their services.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed montserrat-txt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <b>Integration with Social Media:</b>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#nextStepsAccordion">
+                    <div class="accordion-body">
+                        Embed HonestAI within social media platforms to provide real-time credibility scoring on trending topics, helping users identify reliable information sources quickly.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed montserrat-txt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        <b>Enhanced User Education:</b>
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#nextStepsAccordion">
+                    <div class="accordion-body">
+                        Introduce tutorials, resources, and guides that help users understand how to evaluate information sources critically and use HonestAI to its fullest potential.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- About the Creators -->
+        <section id="about-creators">
+            <h2 class="text-center montserrat-txt mb-4">About the Team</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title montserrat-txt">Daniel</h5>
+                            <p class="card-text">
+                                Daniel is the programming lead of the team, bringing a strong background in computer science. His expertise in software development and coding best practices enables him to effectively guide the technical direction of HonestAI. With a passion for problem-solving, Daniel excels in designing efficient algorithms and implementing innovative solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title montserrat-txt">Faiza</h5>
+                            <p class="card-text">
+                                Faiza is a dedicated Data Science major with a keen interest in transforming data into actionable insights. Her analytical skills and proficiency with research allows her to uncover trends and patterns that drive decision-making. Faiza is enthusiastic about leveraging data science to solve real-world problems and enhance user experiences.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title montserrat-txt">Gia</h5>
+                            <p class="card-text">
+                               As a computer science major with a fresh perspective and a strong desire to learn, Gia brings enthusiasm to the team. She has some experience coding front-end websites, and she looks forward to further developing her skills in software development and engineering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title montserrat-txt">Kay</h5>
+                            <p class="card-text">
+                                Kay is a Digital Marketing major who specializes in crafting compelling narratives to engage audiences. She plays a crucial role in promoting the team’s projects and is passionate about integrating marketing with technology to effectively communicate innovative solutions to a wider audience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  
+
+    <!-- Footer -->
+    <footer class="text-light text-center py-3 mt-5">
+        <div class="container">
+            <p>Created for the Fall 2024 BMCC AI Innovation Challenge.</p>
+            <p><b style="color: #000000;">&copy;</b> <b>2024 HonestAI</b>. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>

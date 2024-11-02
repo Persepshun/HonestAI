@@ -1,3 +1,38 @@
-nav {
-    background-color: #6692e3;    
+/* Navigation Bar Color */
+nav{
+    background-color: #a5c1f5; 
+    height: 60px;   
+}
+.navbar-brand{
+    color: #FFFFFF;
+    font-size: 25px;
+}
+.navbar-brand:hover{
+    color: #FFFFFF;
+}
+.full-screen-bg {
+    background: #ffffff;
+    background-image: url('imgs/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 60px); /* Subtracts navbar height */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    background-color: #a5c1f5;
+}
+a{
+    color: #FFFFFF;
+}
+button:hover {
+    background-color: #a5c1f5;
+}
+.montserrat-txt {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
