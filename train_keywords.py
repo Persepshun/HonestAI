@@ -1,5 +1,4 @@
 import csv
-import random
 import requests
 
 # Path to your existing keywords.csv file
@@ -11,8 +10,8 @@ CATEGORIES = [
     "entertainment", "environment", "space", "food"
 ]
 
-# Function to get a random word from an online API (optional)
-def fetch_random_word():
+# Function to fetch a word from an online API (optional)
+def fetch_word():
     try:
         response = requests.get("https://random-word-api.herokuapp.com/word?number=1")
         if response.status_code == 200:
@@ -21,12 +20,12 @@ def fetch_random_word():
         print("Failed to fetch keyword. Using a fallback word.")
     return "defaultword"
 
-# Function to add random keywords to keywords.csv
-def add_random_keywords(num_entries=10):
+# Function to add keywords to keywords.csv without random selection
+def add_keywords(num_entries=10):
     new_entries = []
-    for _ in range(num_entries):
-        category = random.choice(CATEGORIES)  # Randomly select a category
-        word = fetch_random_word()  # Fetch a random word for the keyword
+    for i in range(num_entries):
+        category = CATEGORIES[i % len(CATEGORIES)]  # Cyclically select a category
+        word = fetch_word()  # Fetch a word for the keyword
         new_entries.append((category, word))
     
     # Write new entries to the CSV file
@@ -34,7 +33,7 @@ def add_random_keywords(num_entries=10):
         writer = csv.writer(file)
         writer.writerows(new_entries)
 
-    print(f"Added {num_entries} new keywords from saved_models to {CSV_FILE_PATH}.")
+    print(f"Added {num_entries} new keywords to {CSV_FILE_PATH}.")
 
-# Run the function to add 10 random keywords (customize number as needed)
-add_random_keywords(num_entries=10)
+# Run the function to add 10 keywords (customize number as needed)
+add_keywords(num_entries=10)
