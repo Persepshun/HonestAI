@@ -1,10 +1,13 @@
 
-# Open-Source Ethical AI Toolkit for Bias and Ethical Screening
+
+# Open-Source Ethical AI Toolkit for Bias and Ethical Screening in Search Results and News Media
 
 ## Overview
 This toolkit provides functionalities to:
-1. Detect bias in machine learning models across sensitive attributes like race and gender.
+1. Detect bias digital content and within machine learning models across sensitive attributes like race, gender, even geopotical and socioeconomic status.
 2. Evaluate ethical standards through explainability and privacy checks.
+3. Utilize AI to scrape ethical journalist news sites and unbiased sources to generate a transparent, neutral, and informed news source.
+4. Provide Unbiased and Non-targeted Search Results.
 
 ## Setup and Installation
 
