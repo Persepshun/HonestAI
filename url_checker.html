@@ -14,19 +14,23 @@
 
 </head>
 <body>
-    <nav class="navbar"></nav>
-        <div class="container-fluid">
-          <a class="navbar-brand montserrat-txt" href="index.html">
-            <img src="imgs/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-            HonestAI
-          </a>
-        </div>
-      </nav>
-    <h1>URL Checker</h1>
-    <form action="{{ url_for('url_checker') }}" method="post">
-        <label for="url">Enter a URL:</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Analyze</button>
-    </form>
+    <!-- nav bar -->
+    <nav class="navbar text-light">
+      <div class="container-fluid">
+        <a class="navbar-brand montserrat-txt" href="index.html">
+          <img src="imgs/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          HonestAI
+        </a>
+      </div>
+    </nav>
+
+    <center>
+      <h1 class="montserrat-txt" style="padding-top: 10%;">URL Checker</h1>
+      <form action="url_analysis_result.html" method="post">
+          <label for="url">Enter a URL:</label>
+          <input class="form-control" type="text" id="url" name="url" style="width: 30%;"required>
+          <button class="btn montserrat-txt" type="submit">Analyze</button>
+      </form>
+    </center>
 </body>
 </html>

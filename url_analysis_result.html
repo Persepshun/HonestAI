@@ -14,26 +14,30 @@
 
 </head>
 <body>
-    <nav class="navbar"></nav>
-        <div class="container-fluid">
-          <a class="navbar-brand montserrat-txt" href="index.html">
-            <img src="imgs/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-            HonestAI
-          </a>
-        </div>
-      </nav>
-    <h1>Analysis Results for {{ url }}</h1>
+    <!-- nav bar -->
+    <nav class="navbar text-light">
+      <div class="container-fluid">
+        <a class="navbar-brand montserrat-txt" href="index.html">
+          <img src="imgs/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+          HonestAI
+        </a>
+      </div>
+    </nav>
 
-    {% if results.message %}
-        <p>{{ results.message }}</p>
-    {% else %}
-        <p>Classified Category: {{ results.category }}</p>
-        <p>Demographic Parity Difference (Race): {{ results.dp_difference_race }}</p>
-        <p>Demographic Parity Difference (Sex): {{ results.dp_difference_sex }}</p>
-        <p>Disparate Impact (Race): {{ results.disparate_impact }}</p>
-        <p>Statistical Parity Difference (Race): {{ results.statistical_parity }}</p>
-    {% endif %}
-    
-    <a href="{{ url_for('url_checker') }}">Analyze Another URL</a>
+    <div class="container">
+      <h1 class="montserrat-txt" style="padding-top: 10%;">Analysis Results for {{ url }}</h1>
+
+      {% if results.message %}
+          <p>{{ results.message }}</p>
+      {% else %}
+          <p>Classified Category: {{ results.category }}</p>
+          <p>Demographic Parity Difference (Race): {{ results.dp_difference_race }}</p>
+          <p>Demographic Parity Difference (Sex): {{ results.dp_difference_sex }}</p>
+          <p>Disparate Impact (Race): {{ results.disparate_impact }}</p>
+          <p>Statistical Parity Difference (Race): {{ results.statistical_parity }}</p>
+      {% endif %}
+      <br>
+      <button class="btn montserrat-txt"><a href="search.html"><a href="url_checker.html">Analyze Another URL</a></a></button>
+  </div>
 </body>
 </html>

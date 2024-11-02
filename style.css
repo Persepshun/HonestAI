@@ -1,6 +1,6 @@
 /* Navigation Bar Color */
 nav{
-    background-color: #a5c1f5; 
+    background-color:  #4a76c9; 
     height: 60px;   
 }
 .navbar-brand{
@@ -22,13 +22,26 @@ nav{
     align-items: center;
 }
 footer{
-    background-color: #a5c1f5;
+    background-color:  #4a76c9;
 }
 a{
     color: #FFFFFF;
 }
-button:hover {
+.btn{
+    font-size: 30px;
+    background-color: #4a76c9;
+    text-decoration: none;
+    color: #FFFFFF;
+
+}
+.btn:hover {
     background-color: #a5c1f5;
+    color: #FFFFFF;
+}
+.btn:visited{
+    font-size: 30px;
+    background-color: #4a76c9;
+    text-decoration: none;
 }
 .montserrat-txt {
   font-family: "Montserrat", serif;
