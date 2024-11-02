@@ -17,6 +17,14 @@ app = Flask(__name__)
 # Load keywords from CSV for keyword-based classification
 keywords_df = pd.read_csv("keywords.csv")  # Dataframe to store categories and keywords
 
+# Load bias and ethics values from CSV
+def load_bias_ethics_values():
+    bias_ethics_df = pd.read_csv("bias_ethics_model.csv")
+    return {
+        'bias': bias_ethics_df.loc[0, 'Bias'] if 'Bias' in bias_ethics_df.columns else None,
+        'ethics': bias_ethics_df.loc[0, 'Ethics'] if 'Ethics' in bias_ethics_df.columns else None
+    }
+
 def classify_text_by_keywords(text):
     """
     Classifies text into categories based on keyword matches.
@@ -95,13 +103,18 @@ def analyze_url():
     disparate_impact, statistical_parity = bias_detection.evaluate_aif360_metrics(X, y)
     ethical_screening.ethical_checklist(X, model)
 
+    # Load bias and ethics values from CSV
+    bias_ethics_values = load_bias_ethics_values()
+
     # Package results for display
     results = {
         'dp_difference_race': dp_difference,
         'dp_difference_sex': dp_difference_sex,
         'disparate_impact': disparate_impact,
         'statistical_parity': statistical_parity,
-        'category': category
+        'category': category,
+        'bias_value': bias_ethics_values['bias'],
+        'ethics_value': bias_ethics_values['ethics']
     }
     
     return render_template('url_analysis_result.html', url=url, results=results)
